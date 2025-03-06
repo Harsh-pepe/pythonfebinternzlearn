@@ -1,0 +1,49 @@
+ Python Flask Major Project Assignment  
+
+ Project Title: Online Bookstore Management System  
+
+Objective:  
+Create a simple Online Bookstore using Flask where users can view books by category and submit an inquiry form. An admin panel should allow adding new books.  
+
+
+ Project Requirements:  
+    1. Use Flask for backend development.  
+    2. Use Flask-SQLAlchemy for database management (SQLite).  
+    3. Use Jinja Templating for rendering HTML pages.  
+    4. Implement a Books Catalog with filtering by category.  
+    5. Implement an Inquiry Form for users to request information.  
+    6. Create an Admin Panel to add books to the catalog.  
+
+---
+
+ Step-by-Step Breakdown:  
+
+ Step 1: Set Up the Flask Project  
+- Install Flask and Flask-SQLAlchemy.  
+- Create a new Flask app (`server.py`).  
+- Configure the SQLite database (`bookstore.db`).  
+
+ Step 2: Define the Database Models  
+- Create a Book model with fields: `id`, `title`, `author`, `category`, `price`, `description`.  
+- Create an Inquiry model with fields: `id`, `name`, `email`, `book_title`, `message`.  
+
+ Step 3: Create the Homepage  
+- Fetch all books from the database and display them in a table.  
+- Add a category filter to view books by genre (e.g., Fiction, Science, History).  
+
+ Step 4: Implement the Inquiry Form  
+- Add a form where users can submit inquiries about a book.  
+- Save inquiry data into the database.  
+- Redirect users back to the homepage after submission.  
+
+ Step 5: Build the Admin Panel  
+- Create an admin page where new books can be added to the database.  
+- Display a list of all books in the admin panel.  
+
+ Step 6: Test and Run the Application  
+- Run the Flask app and check that books are displayed correctly.  
+- Test the inquiry form to ensure data is stored in the database.  
+- Test the admin panel to add new books.  
+
+
+
