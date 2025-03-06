@@ -1,0 +1,7 @@
+    Question:
+    You are building a Python script that manages files and directories. You need to:
+
+        1. Check if a file named "data.txt" exists in the current directory.
+        2. If it exists, print "File exists"; otherwise, create the file and write "Hello, World!" into it.
+        3. Retrieve and print the absolute path of "data.txt".
+        4. Print the list of all files and directories in the current working directory.
