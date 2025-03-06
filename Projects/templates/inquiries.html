@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiries</title>
+</head>
+<body>
+    <h1>Customer Inquiries</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Category</th>
+            <th>Message</th>
+        </tr>
+        {% for inquiry in inquiries %}
+        <tr>
+            <td>{{ inquiry.name }}</td>
+            <td>{{ inquiry.mobile }}</td>
+            <td>{{ inquiry.category }}</td>
+            <td>{{ inquiry.message }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

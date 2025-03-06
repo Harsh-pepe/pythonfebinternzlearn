@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Store</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .product { border: 1px solid #ddd; padding: 10px; margin: 10px; display: inline-block; width: 200px; }
+        .categories { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Our Electronics Store</h1>
+
+    <div class="categories">
+        <strong>Categories:</strong>
+        {% for category in categories %}
+            <a href="{{ url_for('filter_category', category=category) }}">{{ category }}</a> |
+        {% endfor %}
+        <a href="{{ url_for('home') }}">All Products</a>
+    </div>
+
+    <div class="products">
+        {% for product in products %}
+        <div class="product">
+            <h3>{{ product.name }}</h3>
+            <p>Category: {{ product.category }}</p>
+            <p>Price: ${{ product.price }}</p>
+            <p>{{ product.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>Product Inquiry</h2>
+    <form action="{{ url_for('inquiry') }}" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="text" name="mobile" placeholder="Mobile Number" required>
+        <select name="category">
+            <option value="Televisions">Televisions</option>
+            <option value="Audio">Audio</option>
+            <option value="Home Appliances">Home Appliances</option>
+            <option value="Kitchen Appliances">Kitchen Appliances</option>
+        </select>
+        <textarea name="message" placeholder="Your Message"></textarea>
+        <button type="submit">Submit Inquiry</button>
+    </form>
+
+</body>
+</html>

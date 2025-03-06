@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+</head>
+<body>
+
+    <h1>Admin Panel - Add Products</h1>
+
+    <form action="{{ url_for('admin') }}" method="POST">
+        <input type="text" name="name" placeholder="Product Name" required>
+        <input type="text" name="category" placeholder="Category" required>
+        <input type="number" name="price" placeholder="Price" required>
+        <textarea name="description" placeholder="Description"></textarea>
+        <button type="submit">Add Product</button>
+    </form>
+
+    <h2>Existing Products</h2>
+    <ul>
+        {% for product in products %}
+            <li>{{ product.name }} - {{ product.category }} - ${{ product.price }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
